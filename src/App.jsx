@@ -452,7 +452,7 @@ export default function App() {
         <div style={{ marginTop: 32, padding: "16px 20px", background: "rgba(255,153,0,0.05)", border: "1px solid rgba(255,153,0,0.12)", borderRadius: 14, display: "flex", alignItems: "flex-start", gap: 12 }}>
           <span style={{ fontSize: 18, flexShrink: 0 }}>ℹ️</span>
           <p style={{ fontSize: 12, color: "rgba(255,255,255,0.4)", fontFamily: "'JetBrains Mono',monospace", lineHeight: 1.65 }}>
-            All vouchers valid for <strong style={{ color: "rgba(255,255,255,0.65)" }}>multiple exam attempt</strong>. Prices in INR. Delivered virtyally or physically within 24 hours of payment confirmation.
+            All vouchers valid for <strong style={{ color: "rgba(255,255,255,0.65)" }}>multiple exam attempt</strong>. Prices in INR. Delivered virtually or physically within 24 hours of payment confirmation.
           </p>
         </div>
       </div>
