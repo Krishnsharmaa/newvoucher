@@ -97,7 +97,7 @@ function PaymentModal({ total, added, onClose }) {
         position: "fixed", inset: 0, zIndex: 200,
         background: "rgba(0,0,0,0.88)", backdropFilter: "blur(16px)",
         display: "flex", alignItems: "center", justifyContent: "center",
-        padding: 20, fontFamily: "'Syne', sans-serif",
+        padding: 16, fontFamily: "'Syne', sans-serif",
       }}
     >
       <div
@@ -105,7 +105,7 @@ function PaymentModal({ total, added, onClose }) {
         style={{
           background: "linear-gradient(145deg, #0D1120, #111827)",
           border: "1px solid rgba(255,153,0,0.25)",
-          borderRadius: 28, padding: "36px 32px",
+          borderRadius: 28, padding: "28px 20px",
           maxWidth: 420, width: "100%", position: "relative",
           boxShadow: "0 0 80px rgba(255,153,0,0.12)",
           maxHeight: "90vh", overflowY: "auto",
@@ -125,11 +125,11 @@ function PaymentModal({ total, added, onClose }) {
           <div style={{ fontSize: 10, color: "rgba(255,255,255,0.35)", fontFamily: "'JetBrains Mono',monospace", letterSpacing: 3, marginBottom: 6, textTransform: "uppercase" }}>
             Pay Amount
           </div>
-          <div style={{ fontSize: 44, fontWeight: 800, color: "#FF9900", fontFamily: "'JetBrains Mono',monospace", lineHeight: 1 }}>
+          <div style={{ fontSize: 40, fontWeight: 800, color: "#FF9900", fontFamily: "'JetBrains Mono',monospace", lineHeight: 1 }}>
             ₹{total.toLocaleString()}
           </div>
-          <div style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: 8, marginTop: 10 }}>
-            <span style={{ fontSize: 12, color: "rgba(255,255,255,0.3)", fontFamily: "'JetBrains Mono',monospace" }}>{UPI_ID}</span>
+          <div style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: 8, marginTop: 10, flexWrap: "wrap" }}>
+            <span style={{ fontSize: 11, color: "rgba(255,255,255,0.3)", fontFamily: "'JetBrains Mono',monospace" }}>{UPI_ID}</span>
             <CopyButton text={UPI_ID} />
           </div>
         </div>
@@ -137,13 +137,13 @@ function PaymentModal({ total, added, onClose }) {
         {/* Divider */}
         <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 18 }}>
           <div style={{ flex: 1, height: 1, background: "rgba(255,255,255,0.07)" }} />
-          <span style={{ fontSize: 9, color: "rgba(255,255,255,0.25)", fontFamily: "'JetBrains Mono',monospace", letterSpacing: 2 }}>SCAN QR WITH ANY UPI APP</span>
+          <span style={{ fontSize: 9, color: "rgba(255,255,255,0.25)", fontFamily: "'JetBrains Mono',monospace", letterSpacing: 2 }}>SCAN QR</span>
           <div style={{ flex: 1, height: 1, background: "rgba(255,255,255,0.07)" }} />
         </div>
 
         {/* QR Code */}
         <div style={{ display: "flex", justifyContent: "center", marginBottom: 14 }}>
-          <QRCanvas data={upiUrl} size={200} />
+          <QRCanvas data={upiUrl} size={180} />
         </div>
 
         <p style={{ textAlign: "center", fontSize: 11, color: "rgba(255,255,255,0.22)", fontFamily: "'JetBrains Mono',monospace", marginBottom: 22 }}>
@@ -153,32 +153,30 @@ function PaymentModal({ total, added, onClose }) {
         {/* Divider */}
         <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 14 }}>
           <div style={{ flex: 1, height: 1, background: "rgba(255,255,255,0.07)" }} />
-          <span style={{ fontSize: 9, color: "rgba(255,255,255,0.25)", fontFamily: "'JetBrains Mono',monospace", letterSpacing: 2 }}>OR TAP TO OPEN UPI APP</span>
+          <span style={{ fontSize: 9, color: "rgba(255,255,255,0.25)", fontFamily: "'JetBrains Mono',monospace", letterSpacing: 2 }}>OR TAP TO OPEN</span>
           <div style={{ flex: 1, height: 1, background: "rgba(255,255,255,0.07)" }} />
         </div>
 
         {/* App Buttons */}
-        <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 10, marginBottom: 20 }}>
+        <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 8, marginBottom: 20 }}>
           {apps.map(app => (
             <a
               key={app.name} href={app.url}
               style={{
-                display: "flex", alignItems: "center", gap: 10,
+                display: "flex", alignItems: "center", gap: 8,
                 background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)",
-                borderRadius: 14, padding: "12px 14px",
+                borderRadius: 12, padding: "10px 12px",
                 textDecoration: "none", color: "#fff", transition: "all 0.2s ease",
               }}
-              onMouseEnter={e => { e.currentTarget.style.background = `${app.color}22`; e.currentTarget.style.borderColor = `${app.color}66`; }}
-              onMouseLeave={e => { e.currentTarget.style.background = "rgba(255,255,255,0.04)"; e.currentTarget.style.borderColor = "rgba(255,255,255,0.08)"; }}
             >
               <div style={{
-                width: 30, height: 30, borderRadius: 8, background: app.color, flexShrink: 0,
+                width: 28, height: 28, borderRadius: 8, background: app.color, flexShrink: 0,
                 display: "flex", alignItems: "center", justifyContent: "center",
-                fontSize: 13, fontWeight: 900, color: "#fff", fontFamily: "sans-serif",
+                fontSize: 12, fontWeight: 900, color: "#fff", fontFamily: "sans-serif",
               }}>
                 {app.letter}
               </div>
-              <span style={{ fontSize: 12, fontWeight: 700 }}>{app.name}</span>
+              <span style={{ fontSize: 11, fontWeight: 700 }}>{app.name}</span>
             </a>
           ))}
         </div>
@@ -246,7 +244,7 @@ export default function App() {
           transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
         }
         .cert-card:hover {
-          transform: translateY(-6px);
+          transform: translateY(-4px);
           border-color: rgba(255,255,255,0.15);
         }
         .cert-card.active {
@@ -257,7 +255,8 @@ export default function App() {
           border: none; cursor: pointer; border-radius: 10px;
           font-family: 'Syne', sans-serif; font-weight: 700;
           font-size: 13px; letter-spacing: 0.5px;
-          transition: all 0.25s ease; padding: 10px 20px;
+          transition: all 0.25s ease; padding: 10px 18px;
+          white-space: nowrap;
         }
         .add-btn:hover { filter: brightness(1.15); transform: scale(1.03); }
 
@@ -288,8 +287,9 @@ export default function App() {
           position: fixed; bottom: 0; left: 0; right: 0;
           background: rgba(10,14,26,0.96); backdrop-filter: blur(20px);
           border-top: 1px solid rgba(255,153,0,0.2);
-          padding: 16px 40px; z-index: 100;
+          padding: 14px 20px; z-index: 100;
           display: flex; align-items: center; justify-content: space-between;
+          gap: 12px;
           transition: transform 0.4s cubic-bezier(0.34,1.56,0.64,1);
         }
         .summary-bar.hidden { transform: translateY(100%); }
@@ -299,12 +299,53 @@ export default function App() {
           color: #000; border: none; cursor: pointer;
           font-family: 'Syne', sans-serif; font-weight: 800;
           font-size: 14px; letter-spacing: 0.5px;
-          padding: 13px 30px; border-radius: 12px;
-          transition: all 0.25s ease;
+          padding: 13px 24px; border-radius: 12px;
+          transition: all 0.25s ease; white-space: nowrap; flex-shrink: 0;
         }
         .checkout-btn:hover { transform: scale(1.04); filter: brightness(1.1); }
 
         .price-num { font-family: 'JetBrains Mono', monospace; font-weight: 600; }
+
+        /* ── Mobile ── */
+        @media (max-width: 600px) {
+          .main-wrap {
+            padding: 32px 16px 140px !important;
+          }
+          .header-title {
+            font-size: 32px !important;
+          }
+          .cards-grid {
+            grid-template-columns: 1fr !important;
+          }
+          .card-inner {
+            padding: 20px 16px 18px !important;
+          }
+          .card-header-row {
+            flex-direction: column !important;
+            gap: 12px !important;
+          }
+          .card-price-block {
+            text-align: left !important;
+          }
+          .summary-bar {
+            padding: 12px 16px !important;
+            flex-wrap: wrap;
+          }
+          .summary-left {
+            flex: 1;
+            min-width: 0;
+          }
+          .summary-right {
+            gap: 12px !important;
+          }
+          .summary-total {
+            font-size: 22px !important;
+          }
+          .checkout-btn {
+            padding: 11px 18px !important;
+            font-size: 13px !important;
+          }
+        }
       `}</style>
 
       <div className="grid-bg" />
@@ -315,10 +356,10 @@ export default function App() {
         <PaymentModal total={total} added={added} onClose={() => setShowPayment(false)} />
       )}
 
-      <div style={{ position: "relative", zIndex: 1, padding: "60px 40px", maxWidth: 1100, margin: "0 auto", paddingBottom: 130 }}>
+      <div className="main-wrap" style={{ position: "relative", zIndex: 1, padding: "60px 40px", maxWidth: 1100, margin: "0 auto", paddingBottom: 130 }}>
 
         {/* ── Header ── */}
-        <div style={{ marginBottom: 64 }}>
+        <div style={{ marginBottom: 48 }}>
           <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 16 }}>
             <div style={{
               background: "linear-gradient(135deg, #FF9900, #FFB84D)",
@@ -329,58 +370,57 @@ export default function App() {
               Voucher Store
             </span>
           </div>
-          <h1 style={{ fontSize: "clamp(34px,5vw,54px)", fontWeight: 800, lineHeight: 1.05, letterSpacing: "-1px", marginBottom: 14 }}>
+          <h1 className="header-title" style={{ fontSize: "clamp(28px,5vw,54px)", fontWeight: 800, lineHeight: 1.05, letterSpacing: "-1px", marginBottom: 14 }}>
             AWS Certification<br />
             <span style={{ color: "#FF9900" }}>Exam Vouchers</span>
           </h1>
-          <p style={{ color: "rgba(255,255,255,0.45)", fontSize: 16, maxWidth: 480, lineHeight: 1.65, fontWeight: 400 }}>
+          <p style={{ color: "rgba(255,255,255,0.45)", fontSize: 15, maxWidth: 480, lineHeight: 1.65, fontWeight: 400 }}>
             Official exam vouchers at fixed prices. Select certifications and pay instantly via UPI — QR or tap.
           </p>
         </div>
 
         {/* ── Cards ── */}
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill,minmax(460px,1fr))", gap: 20 }}>
+        <div className="cards-grid" style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill,minmax(min(100%,460px),1fr))", gap: 16 }}>
           {certs.map(cert => {
             const isAdded = added.includes(cert.id);
             return (
               <div key={cert.id} className={`cert-card${isAdded ? " active" : ""}`}>
-                {/* Top color strip */}
                 <div style={{ position: "absolute", top: 0, left: 0, right: 0, height: 3, background: `linear-gradient(90deg,${cert.color},${cert.accent})` }} />
 
-                <div style={{ padding: "28px 28px 24px" }}>
+                <div className="card-inner" style={{ padding: "28px 28px 24px" }}>
                   {/* Header row */}
-                  <div style={{ display: "flex", alignItems: "flex-start", justifyContent: "space-between", marginBottom: 18 }}>
-                    <div style={{ display: "flex", alignItems: "center", gap: 14 }}>
+                  <div className="card-header-row" style={{ display: "flex", alignItems: "flex-start", justifyContent: "space-between", marginBottom: 18, gap: 12 }}>
+                    <div style={{ display: "flex", alignItems: "center", gap: 14, minWidth: 0 }}>
                       <div style={{
-                        width: 52, height: 52, borderRadius: 14, fontSize: 24,
+                        width: 48, height: 48, borderRadius: 14, fontSize: 22, flexShrink: 0,
                         background: `linear-gradient(135deg,${cert.color}22,${cert.accent}11)`,
                         border: `1px solid ${cert.color}33`,
                         display: "flex", alignItems: "center", justifyContent: "center",
                       }}>
                         {cert.icon}
                       </div>
-                      <div>
-                        <div style={{ display: "flex", gap: 6, marginBottom: 6, alignItems: "center" }}>
+                      <div style={{ minWidth: 0 }}>
+                        <div style={{ display: "flex", gap: 6, marginBottom: 6, alignItems: "center", flexWrap: "wrap" }}>
                           <span className="tag" style={{ color: cert.color, borderColor: `${cert.color}33` }}>{cert.code}</span>
                           <span className={`pill${cert.id === "aip" ? " badge-new" : ""}`}
                             style={{ background: cert.id === "aip" ? undefined : `${cert.color}22`, color: cert.id === "aip" ? "#fff" : cert.color }}>
                             {cert.badge}
                           </span>
                         </div>
-                        <div style={{ fontWeight: 800, fontSize: 16 }}>{cert.name}</div>
+                        <div style={{ fontWeight: 800, fontSize: 15 }}>{cert.name}</div>
                         <div style={{ color: "rgba(255,255,255,0.4)", fontSize: 12, fontFamily: "'JetBrains Mono',monospace" }}>{cert.level}</div>
                       </div>
                     </div>
-                    <div style={{ textAlign: "right" }}>
+                    <div className="card-price-block" style={{ textAlign: "right", flexShrink: 0 }}>
                       <div style={{ color: "rgba(255,255,255,0.3)", fontSize: 10, fontFamily: "'JetBrains Mono',monospace", marginBottom: 4 }}>VOUCHER PRICE</div>
-                      <div className="price-num" style={{ fontSize: 28, fontWeight: 700, color: cert.color }}>₹{cert.price.toLocaleString()}</div>
+                      <div className="price-num" style={{ fontSize: 26, fontWeight: 700, color: cert.color }}>₹{cert.price.toLocaleString()}</div>
                     </div>
                   </div>
 
                   <p style={{ color: "rgba(255,255,255,0.45)", fontSize: 13.5, lineHeight: 1.65, marginBottom: 16 }}>{cert.desc}</p>
 
                   {/* Topics */}
-                  <div style={{ display: "flex", gap: 6, flexWrap: "wrap", marginBottom: 22 }}>
+                  <div style={{ display: "flex", gap: 6, flexWrap: "wrap", marginBottom: 20 }}>
                     {cert.topics.map(t => <span key={t} className="topic-chip">{t}</span>)}
                   </div>
 
@@ -409,35 +449,35 @@ export default function App() {
         </div>
 
         {/* ── Info note ── */}
-        <div style={{ marginTop: 40, padding: "18px 24px", background: "rgba(255,153,0,0.05)", border: "1px solid rgba(255,153,0,0.12)", borderRadius: 14, display: "flex", alignItems: "center", gap: 12 }}>
-          <span style={{ fontSize: 18 }}>ℹ️</span>
-          <p style={{ fontSize: 13, color: "rgba(255,255,255,0.4)", fontFamily: "'JetBrains Mono',monospace", lineHeight: 1.65 }}>
-            All vouchers valid for <strong style={{ color: "rgba(255,255,255,0.65)" }}>one exam attempt</strong>. Prices in INR. Delivered digitally within 24 hours of payment confirmation.
+        <div style={{ marginTop: 32, padding: "16px 20px", background: "rgba(255,153,0,0.05)", border: "1px solid rgba(255,153,0,0.12)", borderRadius: 14, display: "flex", alignItems: "flex-start", gap: 12 }}>
+          <span style={{ fontSize: 18, flexShrink: 0 }}>ℹ️</span>
+          <p style={{ fontSize: 12, color: "rgba(255,255,255,0.4)", fontFamily: "'JetBrains Mono',monospace", lineHeight: 1.65 }}>
+            All vouchers valid for <strong style={{ color: "rgba(255,255,255,0.65)" }}>multiple exam attempt</strong>. Prices in INR. Delivered virtyally or physically within 24 hours of payment confirmation.
           </p>
         </div>
       </div>
 
       {/* ── Summary Bar ── */}
       <div className={`summary-bar${added.length === 0 ? " hidden" : ""}`}>
-        <div>
-          <div style={{ fontSize: 11, color: "rgba(255,255,255,0.35)", fontFamily: "'JetBrains Mono',monospace", marginBottom: 5 }}>
+        <div className="summary-left">
+          <div style={{ fontSize: 10, color: "rgba(255,255,255,0.35)", fontFamily: "'JetBrains Mono',monospace", marginBottom: 5 }}>
             {added.length} VOUCHER{added.length > 1 ? "S" : ""} SELECTED
           </div>
-          <div style={{ display: "flex", gap: 7, flexWrap: "wrap" }}>
+          <div style={{ display: "flex", gap: 6, flexWrap: "wrap" }}>
             {added.map(id => {
               const c = certs.find(c => c.id === id);
               return (
-                <span key={id} style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 11, padding: "3px 10px", borderRadius: 20, background: `${c.color}22`, color: c.color, border: `1px solid ${c.color}44` }}>
+                <span key={id} style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 10, padding: "3px 8px", borderRadius: 20, background: `${c.color}22`, color: c.color, border: `1px solid ${c.color}44` }}>
                   {c.code}
                 </span>
               );
             })}
           </div>
         </div>
-        <div style={{ display: "flex", alignItems: "center", gap: 28 }}>
+        <div className="summary-right" style={{ display: "flex", alignItems: "center", gap: 20, flexShrink: 0 }}>
           <div style={{ textAlign: "right" }}>
             <div style={{ fontSize: 10, color: "rgba(255,255,255,0.3)", fontFamily: "'JetBrains Mono',monospace" }}>TOTAL</div>
-            <div className="price-num" style={{ fontSize: 26, fontWeight: 700, color: "#FF9900" }}>₹{total.toLocaleString()}</div>
+            <div className="price-num summary-total" style={{ fontSize: 24, fontWeight: 700, color: "#FF9900" }}>₹{total.toLocaleString()}</div>
           </div>
           <button className="checkout-btn" onClick={() => setShowPayment(true)}>
             Pay Now →
