@@ -309,7 +309,7 @@ export default function App() {
               <h2 style={{ fontSize: 22, fontWeight: 800, letterSpacing: "-0.5px" }}>Contact Us</h2>
             </div>
             <p style={{ color: "rgba(255,255,255,0.4)", fontSize: 13, fontFamily: "'JetBrains Mono',monospace", marginBottom: 16 }}>
-              Vouchers delivered instantly — no 15-day wait! We also help schedule your exam.
+              Vouchers delivered instantly — no 1-day wait! We also help schedule your exam.
             </p>
             <div style={{ display: "flex", gap: 8, flexWrap: "wrap" }}>
               {["🏫 In College", "📹 Google Meet", "📧 Gmail", "✈️ Telegram", "💬 WhatsApp"].map(m => (
@@ -351,7 +351,7 @@ export default function App() {
               </div>
             </a>
 
-            <a href="https://t.me/awscloudvouchers" target="_blank" rel="noreferrer" className="contact-card">
+            <a href="https://t.me/+e-z3JD1lMtg4MmE1" target="_blank" rel="noreferrer" className="contact-card">
               <div style={{ width: 42, height: 42, borderRadius: 12, background: "rgba(0,136,204,0.15)", border: "1px solid rgba(0,136,204,0.3)", display: "flex", alignItems: "center", justifyContent: "center", fontSize: 20, flexShrink: 0 }}>✈️</div>
               <div>
                 <div style={{ fontSize: 10, color: "rgba(255,255,255,0.35)", fontFamily: "'JetBrains Mono',monospace", letterSpacing: 1, marginBottom: 3 }}>TELEGRAM GROUP</div>
