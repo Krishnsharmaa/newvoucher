@@ -225,7 +225,7 @@ export default function App() {
       <nav className="navbar">
         <div className="nav-logo">
           <div style={{ background: "linear-gradient(135deg, #FF9900, #FFB84D)", borderRadius: 8, width: 30, height: 30, display: "flex", alignItems: "center", justifyContent: "center", fontSize: 15 }}>☁</div>
-          <span style={{ fontFamily: "'Syne',sans-serif", fontWeight: 800, fontSize: 15, color: "#fff", marginLeft: 8 }}>Krishna <span style={{ color: "#FF9900" }}>Vouchers</span></span>
+          <span style={{ fontFamily: "'Syne',sans-serif", fontWeight: 800, fontSize: 15, color: "#fff", marginLeft: 8 }}>AWS Cloud <span style={{ color: "#FF9900" }}>Vouchers</span></span>
         </div>
         <div className="nav-links">
           <button className="nav-link" onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}>Home</button>
@@ -343,13 +343,13 @@ export default function App() {
               </div>
             </a>
 
-            <a href="mailto:itispdfly@gmail.com" className="contact-card">
+            {/* <a href="mailto:itispdfly@gmail.com" className="contact-card">
               <div style={{ width: 42, height: 42, borderRadius: 12, background: "rgba(255,153,0,0.15)", border: "1px solid rgba(255,153,0,0.3)", display: "flex", alignItems: "center", justifyContent: "center", fontSize: 20, flexShrink: 0 }}>✉️</div>
               <div style={{ minWidth: 0 }}>
                 <div style={{ fontSize: 10, color: "rgba(255,255,255,0.35)", fontFamily: "'JetBrains Mono',monospace", letterSpacing: 1, marginBottom: 3 }}>EMAIL</div>
                 <div style={{ fontSize: 12, fontWeight: 700, color: "#FF9900", wordBreak: "break-all" }}>itispdfly@gmail.com</div>
               </div>
-            </a>
+            </a> */}
 
             <a href="https://t.me/+e-z3JD1lMtg4MmE1" target="_blank" rel="noreferrer" className="contact-card">
               <div style={{ width: 42, height: 42, borderRadius: 12, background: "rgba(0,136,204,0.15)", border: "1px solid rgba(0,136,204,0.3)", display: "flex", alignItems: "center", justifyContent: "center", fontSize: 20, flexShrink: 0 }}>✈️</div>
@@ -358,6 +358,19 @@ export default function App() {
                 <div style={{ fontSize: 14, fontWeight: 700, color: "#29B6F6" }}>Join our Group →</div>
               </div>
             </a>
+            <a href="https://chat.whatsapp.com/FaiajtZ5xMi1Xojim2ffqt" target="_blank" rel="noreferrer" className="contact-card">
+  <div style={{ width: 42, height: 42, borderRadius: 12, background: "rgba(37,211,102,0.15)", border: "1px solid rgba(37,211,102,0.3)", display: "flex", alignItems: "center", justifyContent: "center", fontSize: 20, flexShrink: 0 }}>💬</div>
+  
+  <div>
+    <div style={{ fontSize: 10, color: "rgba(255,255,255,0.35)", fontFamily: "'JetBrains Mono',monospace", letterSpacing: 1, marginBottom: 3 }}>
+      WHATSAPP GROUP
+    </div>
+    
+    <div style={{ fontSize: 14, fontWeight: 700, color: "#25D366" }}>
+      Join our Group →
+    </div>
+  </div>
+</a>
           </div>
         </div>
 
